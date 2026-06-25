@@ -1,0 +1,161 @@
+/* ============================================
+   IRON FORGE FITNESS — Layout System
+   ============================================ */
+
+/* === Container === */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-desktop);
+  width: 100%;
+}
+
+/* === Section Spacing === */
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.section.dark {
+  background: var(--color-navy);
+}
+
+.section.darker {
+  background: var(--color-dark);
+}
+
+.section.light-gray {
+  background: var(--color-light-gray);
+}
+
+/* === Grid Systems === */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.grid-2x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* === Responsive Breakpoints === */
+
+/* Large Desktop → Standard Desktop */
+@media (max-width: 1200px) {
+  .grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 var(--container-tablet);
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .split-layout {
+    gap: 40px;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--container-mobile);
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .split-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-2x3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .grid-5 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2x3 {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .section-desc {
+    font-size: 16px;
+  }
+}
